@@ -61,6 +61,7 @@ typings/
 .next
 
 # output bundle files
-public/scripts/bulde.js
+public/scripts/bundle.js
 public/stylesheets/main.css
 public/stylesheets/main.css.map
+.DS_Store
