@@ -1,0 +1,19 @@
+{
+  "name": "hamiltoncitycommunity.org",
+  "version": "1.0.0",
+  "description": "The website of the Hamilton City Community Services District.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamilton-city-csd/hamiltoncitycommunity.org.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamilton-city-csd/hamiltoncitycommunity.org/issues"
+  },
+  "homepage": "https://github.com/hamilton-city-csd/hamiltoncitycommunity.org#readme"
+}
