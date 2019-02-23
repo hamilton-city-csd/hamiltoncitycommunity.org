@@ -7,12 +7,12 @@ import includePaths from 'rollup-plugin-includepaths';
 export default {
   input: 'src/main.js',
   output: {
-    file: 'public/scrips/bundle.js',
+    file: 'public/scripts/bundle.js',
     format: 'iife' //immediatelly invoke function expressions
   },
 
 
-  pluggins: [
+  plugins: [
     //resolve node.js modules from node_modules
     resolve(),
 
