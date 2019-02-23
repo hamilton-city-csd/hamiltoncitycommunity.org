@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+# output bundle files
+public/scripts/bulde.js
+public/stylesheets/main.css
+public/stylesheets/main.css.map
