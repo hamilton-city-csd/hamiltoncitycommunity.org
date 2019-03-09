@@ -1,13 +1,19 @@
 import { Store } from "svelte/store";
-import App from "App.html"
-import firebase from "helpers/firebase"
+import App from "App.html";
+import firebase from "helpers/firebase";
+import env from "env.js"
+
+
 
 const store = new Store({
   name: "Hamilton City Community Service District",
   ready: false
 });
+
+
+
 const db = firebase.database();
-const ref = db.ref("/");
+const ref = db.ref(env.path);
 
 ref.on('value', (snapshot) => {
   const data = snapshot.val();
