@@ -2,29 +2,15 @@
 
 </header>
 <main>
-  {#if page !== null}
-    <Page {page}/>
-  {:else}
-    <p>no page displayed.</p>
-  {/if}
+  <Router/>
 </main>
 
 <footer>
 
 </footer>
 <script>
-  import Page from "components/Page.html";
-  const page = null;
-  // const page = {
-  //   title:"Hello world",
-  //   content:"<h3>content</h3>"
-  // }
+  import Router from "components/Router.html";
   export default {
-    data() {
-      return {
-        page
-      };
-    },
-    components:{Page},
+    components:{Router},
   }
 </script>
