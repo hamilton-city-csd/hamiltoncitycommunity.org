@@ -6,7 +6,7 @@ import Router from "helpers/router";
 const router = new Router("index");
 
 // landing route
-router.route("/", context => router.view.set({ Page: Index }));
+// router.route("/", context => router.view.set({ Page: Index }));
 
 // router.route("/app/:appname", context => router.view.set({
 //   Page: AppLoader,

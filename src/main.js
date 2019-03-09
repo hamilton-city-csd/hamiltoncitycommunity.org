@@ -3,7 +3,7 @@ import App from "App.html";
 import firebase from "helpers/firebase";
 import env from "env.js"
 
-
+console.log("using", env.path, "environment.");
 
 const store = new Store({
   name: "Hamilton City Community Service District",
