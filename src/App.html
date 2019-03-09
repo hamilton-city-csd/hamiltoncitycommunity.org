@@ -1,6 +1,8 @@
 {#if $ready}
   <h1> {$name}</h1>
-{:else}
+  <Layout page={page}/>
+
+  {:else}
   <p>loading...</p>
 {/if}
 
@@ -12,6 +14,14 @@
   }
 </style>
 <script>
+  import Layout from "components/Layout.html";
+
   export default {
+    data(){
+      return {page:{title:"hellowworld", content:"somecontenthere"}}
+    },
+    components: {
+      Layout
+    }
   }
 </script>

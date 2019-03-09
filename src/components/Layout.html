@@ -3,8 +3,7 @@
 </header>
 <main>
   {#if page !== null}
-    <h1>{page.title}</h1>
-    {@html page.content}
+    <Page {page}/>
   {:else}
     <p>no page displayed.</p>
   {/if}
@@ -14,12 +13,18 @@
 
 </footer>
 <script>
+  import Page from "components/Page.html";
+  const page = null;
+  // const page = {
+  //   title:"Hello world",
+  //   content:"<h3>content</h3>"
+  // }
   export default {
     data() {
       return {
-        page:null,
-
+        page
       };
-    }
+    },
+    components:{Page},
   }
 </script>
