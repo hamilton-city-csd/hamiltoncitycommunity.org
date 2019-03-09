@@ -7,7 +7,8 @@ console.log("using", env.path, "environment.");
 
 const store = new Store({
   siteTitle: "Hamilton City Community Service District",
-  ready: false
+  ready: false,
+  areas: {},
 });
 
 
@@ -18,13 +19,15 @@ const ref = db.ref(env.path);
 ref.on('value', (snapshot) => {
   const data = snapshot.val();
   const ready = true;
-  let { siteTitle } = store.get();
 
   // if firebase has data, update our store
   if (data) {
-    siteTitle = data.siteTitle;
+    let { siteTitle, areas } = data;
+    store.set({siteTitle, areas, ready});
   }
-  store.set({siteTitle, ready});
+  else {
+    store.set({ ready });
+  }
 });
 
 
