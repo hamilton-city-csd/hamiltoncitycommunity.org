@@ -6,7 +6,7 @@ import env from "env.js"
 console.log("using", env.path, "environment.");
 
 const store = new Store({
-  name: "Hamilton City Community Service District",
+  siteTitle: "Hamilton City Community Service District",
   ready: false
 });
 
@@ -18,13 +18,13 @@ const ref = db.ref(env.path);
 ref.on('value', (snapshot) => {
   const data = snapshot.val();
   const ready = true;
-  let { name } = store.get();
+  let { siteTitle } = store.get();
 
   // if firebase has data, update our store
   if (data) {
-    name = data.name;
+    siteTitle = data.siteTitle;
   }
-  store.set({name, ready});
+  store.set({siteTitle, ready});
 });
 
 
