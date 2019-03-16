@@ -1,4 +1,5 @@
 import resolve from 'rollup-plugin-node-resolve';
+import json from 'rollup-plugin-json';
 import commonjs from 'rollup-plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import includePaths from 'rollup-plugin-includepaths';
@@ -13,6 +14,9 @@ export default {
 
 
   plugins: [
+    json({
+      compact: true,
+    }),
     //resolve node.js modules from node_modules
     resolve(),
 

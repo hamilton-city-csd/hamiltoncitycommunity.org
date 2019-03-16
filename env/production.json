@@ -1,0 +1,7 @@
+{
+  "name": "production",
+  "apiKey": "AIzaSyBcjPGbBOiRb1JCL09Cf4mwcn-L7N4AagE",
+  "databaseURL": "https://hamiltoncitycommunity.firebaseio.com",
+  "projectId": "hamiltoncitycommunity",
+  "isDevelopment": false
+}

@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "hamiltoncitycommunity"
+    "default": "hamiltoncitycommunity-dev",
+    "development": "hamiltoncitycommunity-dev",
+    "production": "hamiltoncitycommunity"
   }
 }

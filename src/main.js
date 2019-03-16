@@ -3,9 +3,9 @@ import "helpers/firebase-init";
 import { Store } from "svelte/store";
 import App from "App.html";
 import firebase from "helpers/firebase";
-import env from "env.js"
+import { name } from "env.json"
 
-console.log("using", env.path, "environment.");
+console.log(`using ${name} environment.`);
 
 const store = new Store({
   siteTitle: "Hamilton City Community Service District",
@@ -16,7 +16,7 @@ const store = new Store({
 
 
 const db = firebase.database();
-const ref = db.ref(env.path);
+const ref = db.ref("/");
 
 ref.on('value', (snapshot) => {
   const data = snapshot.val();
