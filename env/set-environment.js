@@ -37,10 +37,10 @@ const envName = flag.replace("--", "");
 output(`Setting environment to ${envName} \t (using '${environmentFile}')`);
 
 const sourcePath = `./env/${environmentFile}`;
-const targetPath = `./src/env.json`;
+const targetPath = `./src/.env.json`;
 
 fs.copyFileSync(sourcePath, targetPath);
-output(`Now using ${envName}\n`);
+output(`Now using ${envName}`);
 
 
 

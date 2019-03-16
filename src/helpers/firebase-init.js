@@ -1,6 +1,6 @@
 /* global firebase */
 
-import { apiKey, databaseURL, projectId } from "env.json";
+import { apiKey, databaseURL, projectId } from ".env.json";
 
 
 var config = { apiKey, databaseURL, projectId, };

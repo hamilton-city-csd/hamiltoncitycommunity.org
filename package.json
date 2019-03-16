@@ -4,11 +4,15 @@
   "description": "The website of the Hamilton City Community Services District.",
   "main": "index.js",
   "scripts": {
-    "set-dev": "",
+    "use:dev": "node env/set-environment --dev && echo -n '[firebase] ' && firebase use development",
+    "use:prod": "node env/set-environment --prod && echo -n '[firebase] ' && firebase use production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "local": "firebase serve --port $PORT --host $IP --only hosting"
+    "local": "npm run use:dev && firebase serve --port $PORT --host $IP --only hosting",
+    "deploy:staging": "npm run use:dev && npm run build && firebase deploy --only hosting",
+    "deploy:development": "npm run deploy:staging",
+    "deploy:production": "npm run use:prod && npm run build && firebase deploy --only hosting"
   },
   "repository": {
     "type": "git",

@@ -3,7 +3,7 @@ import "helpers/firebase-init";
 import { Store } from "svelte/store";
 import App from "App.html";
 import firebase from "helpers/firebase";
-import { name } from "env.json"
+import { name } from ".env.json"
 
 console.log(`using ${name} environment.`);
 
