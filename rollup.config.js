@@ -4,6 +4,25 @@ import commonjs from 'rollup-plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import includePaths from 'rollup-plugin-includepaths';
 
+import fs from "fs";
+
+// this is to prevent the dev from building or developing without first running
+//    `npm run use:dev`
+// or if deploying
+//    `npm run use:prod`
+//
+
+if (!fs.existsSync("src/.env.json")) {
+  console.log("Environment is not setup yet.\n\tDid you call `npm run use:dev` before trying to build?\n");
+  throw new Error("Environment not setup.");
+}
+else {
+
+  import("./src/.env.json") // eslint-disable-line
+    .then(({ name })=> console.log(`[build] using ${name} environment`));
+
+}
+
 
 export default {
   input: 'src/main.js',
