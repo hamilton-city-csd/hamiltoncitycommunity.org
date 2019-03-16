@@ -10,9 +10,8 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "local": "npm run use:dev && firebase serve --port $PORT --host $IP --only hosting",
-    "deploy:staging": "npm run use:dev && npm run build && firebase deploy --only hosting",
-    "deploy:development": "npm run deploy:staging",
-    "deploy:production": "npm run use:prod && npm run build && firebase deploy --only hosting"
+    "deploy:dev": "npm run use:dev && npm run build && firebase deploy --only hosting",
+    "deploy:prod": "npm run use:prod && npm run build && firebase deploy --only hosting"
   },
   "repository": {
     "type": "git",
