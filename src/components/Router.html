@@ -26,10 +26,9 @@
     },
 
     oncreate() {
-
+      Router.setNotFoundRoute(this, NotFound)
+      console.log("inside Router.html");
       indexRoutes.init(this);
-
-      Router.setNotFoundRoute(this, NotFound);
       Router.start();
     }
 

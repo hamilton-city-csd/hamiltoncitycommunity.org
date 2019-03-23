@@ -20,6 +20,7 @@ const ref = db.ref("/");
 
 ref.on('value', (snapshot) => {
   const data = snapshot.val();
+  console.log("data");
   const ready = true;
 
   // if firebase has data, update our store
@@ -30,7 +31,7 @@ ref.on('value', (snapshot) => {
   else {
     store.set({ ready });
   }
-});
+}, err => console.error(err));
 
 
 const app = new App({
