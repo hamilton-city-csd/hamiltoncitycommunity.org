@@ -1,10 +1,18 @@
 <svelte:head>
-  <title>{page.title}</title>
+  <title>{title}</title>
 </svelte:head>
-<h1>{page.title}</h1>
-{@html page.content}
-<script>
-  export default{
+<h1>{title}</h1>
+{@html content}
+<aside>{@html aside}</aside>
 
+<script>
+  export default {
+    data() {
+      return {
+        title: "empty page",
+        content: "",
+        aside: "",
+      }
+    }
   }
 </script>
