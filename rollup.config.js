@@ -3,6 +3,7 @@ import json from 'rollup-plugin-json';
 import commonjs from 'rollup-plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import includePaths from 'rollup-plugin-includepaths';
+import buble from 'rollup-plugin-buble';
 
 import fs from "fs";
 
@@ -69,6 +70,11 @@ export default {
         css.write('public/stylesheets/main.css');
 
       }
-    })
+    }),
+    
+     // transpile ES2015+ to ES5
+		buble({
+			exclude: ['node_modules/**']
+		})
   ]
 }
