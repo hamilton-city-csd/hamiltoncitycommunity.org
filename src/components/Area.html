@@ -1,39 +1,74 @@
 <header>
-  <AreaNavigation activeArea={area} activePage={page} />
+  <div class="container">
+    <h1 class="site-title">{$siteTitle}</h1>
+    <AreaNavigation activeArea={area} activePage={page} />
+  </div>
 </header>
 
-<main>
-  <section class="sidebar">
-    {@html pageData.area.sidebarContent}
-  </section>
-  <section class="main-content">
+<section class="container page">
+  
+  <main class="two-thirds column">
     <Page {...pageData.page}></Page>
-  </section>
-</main>
-<style>
-  .sidebar {
-    width: 20rem;
-    padding: 1rem 2rem;
-    margin: 0 0;
-    background-color: #f2f2f2;
-    margin-right: 2rem;
+  </main>
+  
+  {#if pageData.area.sidebarContent}
+    <aside class="one-third column">
+      {@html pageData.area.sidebarContent}
+    </aside>
+  {/if}
+</section>
 
+<style>
+
+  :global(body) {
+    background-color: #f0f0f0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  header {
+    padding: 2rem 0rem 1rem 0rem;
+    width: 100%;
+    background-color: #cdc;
+  }
+  
+  .site-title {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+  
+  .page {
+    margin-top: 4rem;
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 60vh;
+  }
+
+  aside {
+    padding: 2rem 2rem;
+    margin: 0 0;
+    color: #888;
   }
   
   main {
-    
-    padding: 1rem 1rem;
-    display: flex;
-    flex: 0 1 auto;
-    flex-wrap: wrap-reverse;
-    justify-content: space-around;
-    margin: 2rem auto;
+    padding: 1rem 4rem 4rem 4rem;
+    background-color: #fff;
   }
-
-  .main-content {
-    max-width:  40rem;
+  
+  :global(.page > aside ul) {
+    list-style: none;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
   }
+  
 </style>
+
 <script>
   import AreaNavigation from "AreaNavigation.html";
   import Page from "components/Page.html";
