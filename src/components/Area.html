@@ -1,14 +1,9 @@
 <header>
-  <h3>Nav</h3>
-  <nav>
-    <ul>
-    </ul>
-  </nav>
-
+  <AreaNavigation activeArea={area} activePage={page} />
 </header>
+
 <main>
   <section class="sidebar">
-
     {@html pageData.area.sidebarContent}
   </section>
   <section class="main-content">
@@ -17,21 +12,32 @@
 </main>
 <style>
   .sidebar {
-    width: 25%;
+    width: 20rem;
+    padding: 1rem 2rem;
+    margin: 0 0;
+    background-color: #f2f2f2;
+    margin-right: 2rem;
+
   }
+  
   main {
+    
+    padding: 1rem 1rem;
     display: flex;
     flex: 0 1 auto;
-
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+    margin: 2rem auto;
   }
 
   .main-content {
-    width: 75%;
+    max-width:  40rem;
   }
 </style>
 <script>
+  import AreaNavigation from "AreaNavigation.html";
   import Page from "components/Page.html";
   export default {
-    components: { Page }
+    components: { Page, AreaNavigation }
   }
 </script>

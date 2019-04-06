@@ -1,4 +1,4 @@
-
+/* global page */
 
 export default class Router {
 

@@ -7,7 +7,7 @@
   import Router from "helpers/router";
 
   // import our routes
-  import indexRoutes from "routes/controller.js";
+  import { index, router } from "routes/controller.js";
   // import authenticationRoutes from "routes/authentication.js";
   // import dashboardRoutes from "routes/dashboard.js";
 
@@ -26,9 +26,16 @@
     },
 
     oncreate() {
+      
+      
+      // init routes
+      index(this.store);
+      
+      // init router
+      router.init(this);
+
+      // begin routing
       Router.setNotFoundRoute(this, NotFound)
-      console.log("inside Router.html");
-      indexRoutes.init(this);
       Router.start();
     }
 

@@ -11,6 +11,7 @@ const store = new Store({
   siteTitle: "Hamilton City Community Service District",
   ready: false,
   areas: {},
+  defaultAreaName: null,
 });
 
 
@@ -20,13 +21,13 @@ const ref = db.ref("/");
 
 ref.on('value', (snapshot) => {
   const data = snapshot.val();
-  console.log(data);
+  console.log("data updated:", data);
   const ready = true;
 
   // if firebase has data, update our store
   if (data) {
-    let { siteTitle, areas } = data;
-    store.set({siteTitle, areas, ready});
+    let { siteTitle, areas, defaultAreaName } = data;
+    store.set({siteTitle, areas, defaultAreaName, ready});
   }
   else {
     store.set({ ready });
@@ -38,4 +39,5 @@ const app = new App({
   target: document.querySelector("main"),
   store, //store: store
 });
+
 window.store = store; // useful for debugging

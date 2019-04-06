@@ -1,0 +1,49 @@
+<nav>
+  <ul class="top-level">
+    {#each areas as area}
+      <li>
+        <a class="nav-item" href="/{area.id}/index">{area.title || `"${area.id}" needs a title`}</a>
+      </li>
+    {/each}
+  </ul>
+</nav>
+
+<style>
+  nav {
+    border-bottom: 2px solid #bbb;
+    display: block;
+    padding: 1rem 1rem;
+  }
+  
+  ul {
+    padding: 0 0;
+    margin: 0 0;
+    list-style: none;
+    display: flex;
+    flex: 0 1 auto;
+  }
+  
+  .nav-item {
+    padding: 0.5rem 1rem;
+  }
+  
+  .top-level {
+    
+  }
+</style>
+
+<script>
+  export default {
+    data() {
+
+      return {
+        activeArea: null,
+        activePage: null
+      }
+    },
+
+    computed: {
+      areas: ({ $areas }) => Object.values($areas || {})
+    }
+  }
+</script>
