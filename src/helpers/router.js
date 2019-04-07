@@ -15,7 +15,7 @@ export default class Router {
 
   // helpers
   static setNotFoundRoute(routerComponent, NotFound) {
-    page("*", (context) => routerComponent.set({ Page: NotFound}));
+    page("*", (context) => routerComponent.set({ Page: NotFound, }));
   }
 
   static start() {

@@ -13,10 +13,7 @@ export const index = (store) => {
   }
   
   const { areas, defaultAreaName } = store.get();
-
   const indexArea = areas[defaultAreaName];
-  
-  console.log(`initializing routes — %cdefault area is "${defaultAreaName}"`, "color: #0bb")
   
   if (!indexArea) {
     throw new Error("No defaultAreaName was provided");
@@ -24,13 +21,10 @@ export const index = (store) => {
 
 
   // log each route
-  router.route("*", (context, next) => (console.log("Route:", context), next()));
+  router.route("*", (context, next) => (console.log("Route:", context.path), next()));
 
   // landing route
   router.route("/:page?", (context, next) => {
-
-    console.log("hit route")
-    console.log("hey")
     
     let pageName = context.params.page;
     const indexPageName = "information";
@@ -57,12 +51,12 @@ export const index = (store) => {
   });
   
 
-  router.route("/:area/:page", context => {
-    console.log("hey2?")
+  router.route("/:area/:page", (context, next) => {
     const area = areas[context.params.area];
     
     if (area) {
-      const page = area.pages[context.params.page.toLowerCase()];
+      const pageName = context.params.page.toLowerCase();
+      const page = area.pages[pageName];
   
       if (page) {
   
@@ -70,6 +64,9 @@ export const index = (store) => {
           Page,
           pageData: { area, page }
         });
+      }
+      else {
+        next()
       }
     }
   });

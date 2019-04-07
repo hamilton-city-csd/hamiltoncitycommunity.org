@@ -6,20 +6,25 @@
 </header>
 
 <section class="container page">
-  
+
   <main class="two-thirds column">
     <Page {...pageData.page}></Page>
   </main>
-  
+
   {#if pageData.area.sidebarContent}
-    <aside class="one-third column">
-      {@html pageData.area.sidebarContent}
-    </aside>
+  <aside class="one-third column">
+    {@html pageData.area.sidebarContent}
+  </aside>
   {/if}
 </section>
 
-<style>
+<footer class="container">
+  <p>
+    {$siteTitle} - {new Date().getFullYear()} <br /> MIT License
+  </p>
+</footer>
 
+<style>
   :global(body) {
     background-color: #f0f0f0;
   }
@@ -28,19 +33,23 @@
     box-sizing: border-box;
   }
 
+  footer {
+    color: #bbb;
+  }
+
   header {
     padding: 2rem 0rem 1rem 0rem;
     width: 100%;
     background-color: #cdc;
   }
-  
+
   .site-title {
     font-size: 3rem;
     margin: 1rem 0;
   }
-  
+
   .page {
-    margin-top: 4rem;
+    margin: 4rem auto;
     display: flex;
     flex: 0 1 auto;
     flex-wrap: wrap;
@@ -53,12 +62,12 @@
     margin: 0 0;
     color: #888;
   }
-  
+
   main {
     padding: 1rem 4rem 4rem 4rem;
     background-color: #fff;
   }
-  
+
   :global(.page > aside ul) {
     list-style: none;
     border-bottom: 1px solid #f0f0f0;
@@ -66,7 +75,6 @@
     margin-bottom: 1rem;
     padding-left: 1rem;
   }
-  
 </style>
 
 <script>
