@@ -20,7 +20,8 @@
 
 <footer class="container">
   <p>
-    {$siteTitle} - {new Date().getFullYear()} <br /> MIT License
+    {$siteTitle}<br />
+    MIT License - {new Date().getFullYear()} - <a href="https://github.com/hamilton-city-csd" target="_blank">Open Source</a>
   </p>
 </footer>
 
@@ -34,13 +35,21 @@
   }
 
   footer {
-    color: #bbb;
+    padding: 2rem 1rem;
+  }
+  
+  footer,
+  footer a,
+  footer a:link,
+  footer a:visited {
+    color: #888;
   }
 
   header {
     padding: 2rem 0rem 1rem 0rem;
     width: 100%;
-    background-color: #cdc;
+    background-color: #53a9c2;
+    color: #fff;
   }
 
   .site-title {
@@ -49,7 +58,7 @@
   }
 
   .page {
-    margin: 4rem auto;
+    margin: 4rem auto 2rem auto;
     display: flex;
     flex: 0 1 auto;
     flex-wrap: wrap;
