@@ -12,6 +12,7 @@ const store = new Store({
   ready: false,
   areas: {},
   defaultAreaName: null,
+  navigation: [],
 });
 
 
@@ -26,8 +27,8 @@ ref.on('value', (snapshot) => {
 
   // if firebase has data, update our store
   if (data) {
-    let { siteTitle, areas, defaultAreaName } = data;
-    store.set({siteTitle, areas, defaultAreaName, ready});
+    let { siteTitle, areas, defaultAreaName, navigation } = data;
+    store.set({siteTitle, areas, defaultAreaName, ready, navigation});
   }
   else {
     store.set({ ready });

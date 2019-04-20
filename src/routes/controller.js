@@ -27,7 +27,7 @@ export const index = (store) => {
   router.route("/:page?", (context, next) => {
     
     let pageName = context.params.page;
-    const indexPageName = "information";
+    const indexPageName = "index";
     const hasPage = indexArea.pages[pageName];
     // index was hit: "/"
     if (typeof pageName === "undefined") {
@@ -39,6 +39,7 @@ export const index = (store) => {
     }
     
     // a page was hit: "/:page"
+      
     return router.view.set({
       Page,
       pageData: {
@@ -59,7 +60,7 @@ export const index = (store) => {
       const page = area.pages[pageName];
   
       if (page) {
-  
+
         router.view.set({
           Page,
           pageData: { area, page }

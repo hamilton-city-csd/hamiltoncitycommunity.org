@@ -1,8 +1,8 @@
 <nav>
   <ul class="top-level">
-    {#each areas as area}
+    {#each $navigation as link}
       <li>
-        <a class="nav-item" href="/{area.id}/index">{area.title || `"${area.id}" needs a title`}</a>
+        <a class="nav-item" href="{link.href}">{link.title}</a>
       </li>
     {/each}
   </ul>
@@ -46,7 +46,7 @@
 
       return {
         activeArea: null,
-        activePage: null
+        activePage: null,
       }
     },
 
